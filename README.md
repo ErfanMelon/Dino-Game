@@ -11,4 +11,4 @@ This repo is for unity course
 
 ## Demo
 
-![game](https://github.com/ErfanMelon/Dino-Game/tree/Inventory-AdvanceUI/demo.gif)
+![game](https://raw.githubusercontent.com/ErfanMelon/Dino-Game/Inventory-AdvanceUI/demo.gif)
