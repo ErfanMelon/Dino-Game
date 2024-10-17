@@ -17,7 +17,13 @@ public class GameManager : MonoBehaviour
 
     private float score;
     private Player player;
-    private Spawner spawner;
+    private Spawner[] spawners;
+
+
+    private float starCount;
+    public TextMeshProUGUI starCountText;
+
+    private Life life;
 
     private void Awake()
     {
@@ -42,7 +48,8 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         player = FindObjectOfType<Player>();
-        spawner = FindObjectOfType<Spawner>();
+        spawners = FindObjectsOfType<Spawner>();
+        life = FindObjectOfType<Life>();
 
         NewGame();
     }
@@ -59,9 +66,14 @@ public class GameManager : MonoBehaviour
         gameSpeed = initialGameSpeed;
         score = 0f;
         enabled = true;
+        starCount = 0f;
+        starCountText.text = "0";
 
         player.gameObject.SetActive(true);
-        spawner.gameObject.SetActive(true);
+        foreach (var obj in spawners)
+        {
+            obj.gameObject.SetActive(true);
+        }
 
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
@@ -74,7 +86,10 @@ public class GameManager : MonoBehaviour
         enabled = false;
 
         player.gameObject.SetActive(false);
-        spawner.gameObject.SetActive(false);
+        foreach (var obj in spawners)
+        {
+            obj.gameObject.SetActive(false);
+        }
 
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
@@ -101,5 +116,29 @@ public class GameManager : MonoBehaviour
 
         hiscoreText.text = Mathf.FloorToInt(hiscore).ToString("D5");
 
+    }
+
+    public void CatchStar()
+    {
+        starCount++;
+        starCountText.text = starCount.ToString();
+    }
+    public void GetHeart()
+    {
+        if (life.hasExtraLife == false)
+        {
+            life.hasExtraLife = true;
+            life.DisplayHeart();
+        }
+
+    }
+    public void RemoveHeart(){
+        if(life.hasExtraLife == true){
+            life.hasExtraLife = false;
+            life.ClearHeart();
+        }
+        else{
+            GameOver();
+        }
     }
 }

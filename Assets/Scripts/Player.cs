@@ -39,7 +39,18 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            GameManager.Instance.GameOver();
+            GameManager.Instance.RemoveHeart();
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Resource"))
+        {
+            GameManager.Instance.CatchStar();
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Life"))
+        {
+            GameManager.Instance.GetHeart();
+            Destroy(other.gameObject);
         }
     }
 }
