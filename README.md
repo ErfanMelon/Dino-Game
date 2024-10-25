@@ -11,4 +11,4 @@ This repo is for unity course
 
 ## Demo
 
-![game](https://github.com/ErfanMelon/Dino-Game/tree/Inventory-AdvanceUI/demo.gif)
+![game](https://github.com/ErfanMelon/Dino-Game/tree/Talking-Calculator/demo.mkv)

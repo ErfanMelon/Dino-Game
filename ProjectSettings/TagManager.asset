@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Obstacle
-  - Resource
-  - Life
-  - Jump
+  tags: []
   layers:
   - Default
   - TransparentFX
