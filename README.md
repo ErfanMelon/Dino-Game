@@ -1,5 +1,5 @@
 
-# Dino Game
+# The Calculator
 
 This repo is for unity course
 
@@ -11,4 +11,4 @@ This repo is for unity course
 
 ## Demo
 
-![game](https://github.com/ErfanMelon/Dino-Game/tree/Talking-Calculator/demo.mkv)
+https://github.com/user-attachments/assets/0980c53a-8aa5-4b24-b8e8-ece72ca72a7e
